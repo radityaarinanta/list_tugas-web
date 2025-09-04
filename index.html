@@ -3,23 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Tugas</title>
+    <title>List Tugas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" type="image/x-icon">   
 </head>
 <body>
+
     <div class="container">
         <div class="todo-app">
-            <h2>Daftar Tugas <img src="icon.png" alt="icon"></h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Tambahkan tugas baru">
-                <button onclick="addTask()">Tambah</button>
+            <div class="header">
+                <h2>Daftar Tugas</h2>
+                <button id="theme-toggle">🌙</button>
             </div>
+            
+            <div class="input-section">
+                <input type="text" id="input-box" placeholder="Apa rencanamu hari ini?">
+                <div class="task-options">
+                    <input type="date" id="due-date-input">
+                    <select id="priority-input">
+                        <option value="rendah">Prioritas Rendah</option>
+                        <option value="sedang">Prioritas Sedang</option>
+                        <option value="tinggi">Prioritas Tinggi</option>
+                    </select>
+                </div>
+                <button id="add-btn">Tambah</button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="semua">Semua</button>
+                <button class="filter-btn" data-filter="belum">Belum Selesai</button>
+                <button class="filter-btn" data-filter="selesai">Selesai</button>
+            </div>
+            
             <ul id="list-container">
                 </ul>
         </div>
     </div>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
